@@ -12,3 +12,6 @@ test-cov:
 
 help-app:
 	poetry run gendiff -h
+
+build:
+	poetry build
