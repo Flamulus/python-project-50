@@ -10,4 +10,3 @@ def test_generate_diff():
     with open(with_links_path, encoding='utf8') as f:
         txt = f.read()
         assert "".join(txt) == result
-    

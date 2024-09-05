@@ -10,8 +10,7 @@ packages = [
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
-	  "Intended Audience :: Students",
-	  "Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.10",
 ]
 
 [tool.poetry.dependencies]
