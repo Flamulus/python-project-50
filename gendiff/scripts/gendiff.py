@@ -4,6 +4,13 @@ import argparse
 import json
 
 
+def format_to_string(data, key, prefix=" "):
+    if data[key] in (True, False, None):
+        data_f = str(data[key]).lower()
+        return f'  {prefix} {key}: {data_f}'
+    return f'  {prefix} {key}: {data[key]}'
+
+
 def generate_diff(file_path1, file_path2):
     file1 = json.load(open(file_path1))
     file2 = json.load(open(file_path2))
@@ -12,14 +19,15 @@ def generate_diff(file_path1, file_path2):
     for key in keys:
         if (key in file1) and (key in file2):
             if file1[key] == file2[key]:
-                data.append(f'    {key}: {file1[key]}')
+                format_to_string(file1, key)
+                data.append(format_to_string(file1, key))
             else:
-                data.append(f'  - {key}: {file1[key]}')
-                data.append(f'  + {key}: {file2[key]}')
+                data.append(format_to_string(file1, key, prefix='-'))
+                data.append(format_to_string(file2, key, prefix='+'))
         elif (key in file1):
-            data.append(f'  - {key}: {file1[key]}')
+            data.append(format_to_string(file1, key, prefix='-'))
         elif (key in file2):
-            data.append(f'  + {key}: {file2[key]}')
+            data.append(format_to_string(file2, key, prefix='+'))
     result = "\n".join(data)
     return f'{{\n{result}\n}}'
 
