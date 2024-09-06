@@ -28,4 +28,7 @@ jobs:
           make check
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
-        coverageCommand: make test-coverage
+        with:
+          coverageCommand: make test-coverage
+          debug: true
+    
