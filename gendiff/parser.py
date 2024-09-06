@@ -8,6 +8,7 @@ PARSERS = {
     'yaml': yaml.load,
 }
 
+
 def parse_files(*paths):
     files = []
     for path in paths:
@@ -19,4 +20,3 @@ def parse_files(*paths):
         else:
             files.append({})
     return files
-
