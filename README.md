@@ -4,3 +4,5 @@
 
 ### Example of how the package works
 [![asciicast](https://asciinema.org/a/i7SOAc1B1yh8t73ThaDVF3X9p.svg)](https://asciinema.org/a/i7SOAc1B1yh8t73ThaDVF3X9p)
+
+[![asciicast](https://asciinema.org/a/VQoHjHPX0wVCChInnUWYg1lVC.svg)](https://asciinema.org/a/VQoHjHPX0wVCChInnUWYg1lVC)

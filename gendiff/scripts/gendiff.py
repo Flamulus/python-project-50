@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-import json
+from gendiff.parser import parse_files
 
 
 def format_to_string(data, key, prefix=" "):
@@ -12,8 +12,7 @@ def format_to_string(data, key, prefix=" "):
 
 
 def generate_diff(file_path1, file_path2):
-    file1 = json.load(open(file_path1))
-    file2 = json.load(open(file_path2))
+    file1, file2 = parse_files(file_path1, file_path2)
     keys = sorted(set(file1.keys()) | set(file2.keys()))
     data = []
     for key in keys:
