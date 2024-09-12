@@ -16,3 +16,20 @@ def test_generate_diff_flat_files():
         txt = "".join(f.read())
         assert txt == result_json
         assert txt == result_yaml
+
+
+# def test_generate_diff():
+#     result_json = generate_diff(
+#         'tests/fixtures/file1.json',
+#         'tests/fixtures/file2.json'
+#     )
+#     result_yaml = generate_diff(
+#         'tests/fixtures/file1.yaml',
+#         'tests/fixtures/file2.yaml'
+#     )
+#     with_links_path = 'tests/fixtures/diff_files.txt'
+
+#     with open(with_links_path, encoding='utf8') as f:
+#         txt = "".join(f.read())
+#         assert txt == result_json
+#         assert txt == result_yaml
